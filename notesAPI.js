@@ -15,7 +15,7 @@ export default class notesAPI {
             exists.content = noteToSave.content;
             exists.updated = new Date().toISOString();
         } else {
-            noteToSave.id = Date.now();
+            noteToSave.id = crypto.randomUUID();
             noteToSave.updated = new Date().toISOString();
             notes.push(noteToSave);
         }
