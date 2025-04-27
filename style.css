@@ -1,0 +1,138 @@
+body {
+    background-image: linear-gradient(to right, #000a46, #360000);
+    height: 100%;
+    margin: 0;
+}
+
+.notesApp {
+    display: flex;
+    height: 100%;
+}
+
+.sideBar {
+    border-right: 2px solid #009dff;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow-y: auto;
+    width: 400px;
+}
+
+.buttons {
+    padding: 5% 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.addNote {
+    background-color: green;
+    height: 50px;
+    width: 175px;
+    border-radius: 20px;
+    font-size: 1.25rem;
+    font-family: 'Montserrat' , sans-serif;
+}
+
+.deleteNote {
+    background-color: #d11616;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 1.25rem;
+    font-family: 'Montserrat' , sans-serif;
+}
+
+.noteList {
+    padding: 0 2.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.noteListItem {
+    width: 100%;
+    padding: 2.5%;
+    height: 85px;
+    background-color: #1bb38a;
+    border-top: 2px solid #009dff;
+    cursor: pointer;
+}
+
+.noteListItem:hover{
+    background-color: #22d9a8;
+    transform: scale(1.02);
+    transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.noteListItem--selected{
+    background-color: #22d9a8;
+    transform: scale(1.02);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.noteTitle {
+    font-family: 'Roboto' , sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.noteText {
+    font-family: 'Montserrat' , sans-serif;
+    font-size: 1.25rem;
+}
+
+.noteTime {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 6%;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgb(0 , 0, 0 , 0.5);
+    text-align: right;
+}
+
+.deleteNoteItem {
+    display: none;
+    background-color: #d11616;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+}
+
+.noteEditor {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    flex-grow: 1;
+}
+
+.noteTitleInput {
+    font-family: 'Montserrat' , sans-serif;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 3rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+.noteTextInput {
+    padding: 2.5%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* for Safari support */
+    outline: none;
+    border: none;
+    color: white;
+    width: 1375px;
+    height: 720px;
+    font-family: 'Roboto' , sans-serif;
+    flex-grow: 1;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 2em;
+    resize: none;
+    border-radius: 20px;
+    padding: 1em;
+}

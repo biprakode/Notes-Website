@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parisienne&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!--Add user login functionality-->
+
+    <div class="notesApp">
+        <div class="sideBar">
+            <div class="buttons">
+                <button class="addNote">Add Note</button>
+                <button class="deleteNote">Delete Note</button>
+            </div>
+
+            <div class="noteList">
+                <div class="noteListItem noteListItem--selected">
+                    <div class="note">
+                        <div class="noteTitle">Note Title</div>
+                        <div class="noteText">Note Text</div>
+                        <div class="noteTime">Last Edited</div>
+                        <button class="deleteNoteItem">Delete this Note</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+        <div class="noteEditor">
+            <div class="noteView">
+                <input type="text" class="noteTitleInput" placeholder="Enter a Title">
+                <textarea class="noteTextInput" placeholder="Enter your note here..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
