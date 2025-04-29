@@ -1,6 +1,8 @@
 body {
-    background-image: linear-gradient(to right, #000a46, #360000);
-    height: 100%;
+    background-image: url(./perfectBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     margin: 0;
 }
 
@@ -10,7 +12,7 @@ body {
 }
 
 .sideBar {
-    border-right: 2px solid #009dff;
+    padding: 0 2.5%;
     height: 100vh;
     flex-shrink: 0;
     overflow-y: auto;
@@ -43,7 +45,6 @@ body {
 }
 
 .noteList {
-    padding: 0;
     display: flex;
     flex-direction: column;
 }
@@ -113,7 +114,7 @@ body {
 .noteTitleInput {
     font-family: 'Montserrat' , sans-serif;
     background-color: transparent;
-    color: white;
+    color: antiquewhite;
     outline: none;
     border: none;
     font-size: 3rem;

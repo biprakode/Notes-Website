@@ -46,13 +46,24 @@ export default class notesView {
             })
         })
 
-        console.log(this._createListItemHTML("12385" , "Test Title" , "This is a test note." , new Date()));
+        this.root.querySelector('.noteList').addEventListener('click', (event) => {
+            const deleteLink = event.target.closest('.deleteNoteLink');
+            if (deleteLink) {
+                const deleteConfirm = confirm("Are you sure you want to delete this note?");
+                if (deleteConfirm) {
+                    const noteListItem = deleteLink.closest('.noteListItem');
+                    if (noteListItem) {
+                        this.onNoteDelete(noteListItem.getAttribute('noteID'));
+                    }
+                }
+            }
+        });
 
         this.updateNotePreviewVisibility(false);
     }
 
     _createListItemHTML(id , title , text , updated) {
-        const MAX_LENGTH = 60;
+        const MAX_LENGTH = 40;
         return `<div class='noteListItem' noteID=${id}>
             <div class="noteListTitle">${title}</div>
             <div class="noteListText">${text.length > MAX_LENGTH ? text.substring(0,MAX_LENGTH) + "..." : text}</div>
@@ -84,18 +95,6 @@ export default class notesView {
             });
         });
 
-        noteListContainer.addEventListener('click', (event) => {
-            const deleteLink = event.target.closest('.deleteNoteLink');
-            if (deleteLink) {
-                const deleteConfirm = confirm("Are you sure you want to delete this note?");
-                if (deleteConfirm) {
-                    const noteListItem = deleteLink.closest('.noteListItem');
-                    if (noteListItem) {
-                        this.onNoteDelete(noteListItem.getAttribute('noteID'));
-                    }
-                }
-            }
-        });
     }
 
     updateActiveNote(note) {
