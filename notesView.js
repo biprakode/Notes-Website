@@ -10,7 +10,6 @@ export default class notesView {
             <div class="sideBar">
                 <div class="buttons">
                     <button class="addNote">Add Note</button>
-                    <button class="deleteNote">Delete Note</button>
                 </div>
 
                 <div class="noteList"></div>
@@ -26,16 +25,11 @@ export default class notesView {
         </div>`
 
         const btnAddNote = this.root.querySelector('.addNote');
-        const btnDeleteNote = this.root.querySelector('.deleteNote');
         const inpTitle = this.root.querySelector('.noteTitleInput');
         const inpText = this.root.querySelector('.noteTextInput');
         
         btnAddNote.addEventListener('click' , () => {
             this.onNoteAdd();
-        });
-
-        btnDeleteNote.addEventListener('click' , () => {
-            this.onNoteDelete();
         });
 
         [inpTitle , inpText].forEach(inputFeild => {
@@ -63,7 +57,7 @@ export default class notesView {
     }
 
     _createListItemHTML(id , title , text , updated) {
-        const MAX_LENGTH = 40;
+        const MAX_LENGTH = 85;
         return `<div class='noteListItem' noteID=${id}>
             <div class="noteListTitle">${title}</div>
             <div class="noteListText">${text.length > MAX_LENGTH ? text.substring(0,MAX_LENGTH) + "..." : text}</div>
